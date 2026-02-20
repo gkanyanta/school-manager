@@ -6,7 +6,7 @@ services:
     plan: free
     buildCommand: pnpm install && pnpm db:generate && cd apps/api && pnpm build
     startCommand: node apps/api/dist/main.js
-    postDeployCommand: pnpm --filter api run db:deploy && pnpm --filter api run db:seed
+    preDeployCommand: pnpm --filter api run db:deploy && pnpm --filter api run db:seed
     envVars:
       - key: DATABASE_URL
         fromDatabase:
