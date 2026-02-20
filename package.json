@@ -1,0 +1,29 @@
+{
+  "name": "school-manager",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel -r run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "db:migrate": "pnpm --filter api run db:migrate",
+    "db:seed": "pnpm --filter api run db:seed",
+    "db:studio": "pnpm --filter api run db:studio",
+    "db:generate": "pnpm --filter api run db:generate"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@nestjs/core",
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma",
+      "puppeteer",
+      "msgpackr-extract"
+    ]
+  }
+}
